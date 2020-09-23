@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module DatabaseAccess</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>DatabaseAccess</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/pi/IoT/IoTAssignment2/MasterPi/DatabaseAccess.py">/home/pi/IoT/IoTAssignment2/MasterPi/DatabaseAccess.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="MySQLdb.html">MySQLdb</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="DatabaseAccess.html#DatabaseUtils">DatabaseUtils</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DatabaseUtils">class <strong>DatabaseUtils</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#DatabaseUtils">DatabaseUtils</a>(connection=None)<br>
+&nbsp;<br>
+General&nbsp;class&nbsp;holding&nbsp;functions&nbsp;to&nbsp;allow&nbsp;access&nbsp;to&nbsp;google&nbsp;cloud&nbsp;database.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="DatabaseUtils-__enter__"><strong>__enter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DatabaseUtils-__exit__"><strong>__exit__</strong></a>(self, type, value, traceback)</dt></dl>
+
+<dl><dt><a name="DatabaseUtils-__init__"><strong>__init__</strong></a>(self, connection=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-bookCar"><strong>bookCar</strong></a>(self, user, rego, startDate, endDate, eventID)</dt><dd><tt>allows&nbsp;car&nbsp;to&nbsp;be&nbsp;booked&nbsp;and&nbsp;updates&nbsp;booking&nbsp;database&nbsp;given&nbsp;username,&nbsp;rego,&nbsp;start&nbsp;and&nbsp;enddates.&nbsp;also&nbsp;takes&nbsp;eventID&nbsp;to&nbsp;update&nbsp;calendar</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-checkoutBooking"><strong>checkoutBooking</strong></a>(self, username, password, carRego, date)</dt><dd><tt>allows&nbsp;user&nbsp;to&nbsp;unlock&nbsp;and&nbsp;take&nbsp;car&nbsp;given&nbsp;username,&nbsp;password&nbsp;and&nbsp;car&nbsp;rego&nbsp;are&nbsp;correct<br>
+and&nbsp;todays&nbsp;date&nbsp;is&nbsp;within&nbsp;their&nbsp;booking&nbsp;time&nbsp;frame</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-close"><strong>close</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DatabaseUtils-createBooking"><strong>createBooking</strong></a>(self, user, rego, startDate, EndDate)</dt><dd><tt>create&nbsp;new&nbsp;booking&nbsp;for&nbsp;a&nbsp;user&nbsp;within&nbsp;the&nbsp;Booking&nbsp;table&nbsp;given<br>
+user,&nbsp;rego,&nbsp;start&nbsp;date&nbsp;and&nbsp;end&nbsp;date&nbsp;of&nbsp;booking.</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-createDatabase"><strong>createDatabase</strong></a>(self)</dt><dd><tt>function&nbsp;to&nbsp;create&nbsp;database&nbsp;in&nbsp;the&nbsp;event&nbsp;that&nbsp;it&nbsp;doed&nbsp;not&nbsp;exist</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-deleteBooking"><strong>deleteBooking</strong></a>(self, eventID)</dt><dd><tt>removes&nbsp;booking&nbsp;from&nbsp;database&nbsp;given&nbsp;ID</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-getAllCars"><strong>getAllCars</strong></a>(self)</dt><dd><tt>return&nbsp;all&nbsp;cars</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-getAvailableCars"><strong>getAvailableCars</strong></a>(self, date)</dt><dd><tt>retursn&nbsp;all&nbsp;available&nbsp;cars&nbsp;given&nbsp;date</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-getBookingHistory"><strong>getBookingHistory</strong></a>(self, user)</dt><dd><tt>returns&nbsp;all&nbsp;bookings&nbsp;for&nbsp;a&nbsp;given&nbsp;user</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-getUserEmail"><strong>getUserEmail</strong></a>(self, user)</dt><dd><tt>returns&nbsp;userEmail&nbsp;given&nbsp;username</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-getUserID"><strong>getUserID</strong></a>(self, user)</dt><dd><tt>returns&nbsp;userID&nbsp;given&nbsp;username</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-getUsers"><strong>getUsers</strong></a>(self)</dt><dd><tt>return&nbsp;all&nbsp;users</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-insertUser"><strong>insertUser</strong></a>(self, name, email, password)</dt><dd><tt>insert&nbsp;new&nbsp;user&nbsp;into&nbsp;User&nbsp;table&nbsp;given&nbsp;name,&nbsp;email&nbsp;and&nbsp;password</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-populateDatabase"><strong>populateDatabase</strong></a>(self)</dt><dd><tt>populates&nbsp;Car&nbsp;table&nbsp;with&nbsp;company&nbsp;cars</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-removeBooking"><strong>removeBooking</strong></a>(self, bookingID)</dt><dd><tt>Removes&nbsp;booking&nbsp;given&nbsp;a&nbsp;bookingID</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-returnCar"><strong>returnCar</strong></a>(self, carRego)</dt><dd><tt>given&nbsp;a&nbsp;car&nbsp;registration,&nbsp;it&nbsp;updates&nbsp;the&nbsp;Car&nbsp;table&nbsp;whether&nbsp;a&nbsp;car&nbsp;has&nbsp;been&nbsp;returned</tt></dd></dl>
+
+<dl><dt><a name="DatabaseUtils-searchCars"><strong>searchCars</strong></a>(self, attribute, term)</dt><dd><tt>returns&nbsp;all&nbsp;cars&nbsp;given&nbsp;string&nbsp;attribute&nbsp;(fixed&nbsp;from&nbsp;call)&nbsp;and&nbsp;term</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>DATABASE</strong> = 'Assignment2'</dl>
+
+<dl><dt><strong>HOST</strong> = '35.197.176.186'</dl>
+
+<dl><dt><strong>PASSWORD</strong> = 'IHkoFeHgmh085ly9'</dl>
+
+<dl><dt><strong>USER</strong> = 'root'</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

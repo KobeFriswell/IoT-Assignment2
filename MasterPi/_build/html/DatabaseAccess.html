@@ -1,0 +1,256 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DatabaseAccess &#8212; MasterPi  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-databaseaccess">
+<span id="databaseaccess"></span><h1>DatabaseAccess<a class="headerlink" href="#module-databaseaccess" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="databaseaccess.DatabaseUtils">
+<em class="property">class </em><code class="descclassname">databaseaccess.</code><code class="descname">DatabaseUtils</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils" title="Permalink to this definition">¶</a></dt>
+<dd><p>General class holding functions to allow access to google cloud database.</p>
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.addCarLocation">
+<code class="descname">addCarLocation</code><span class="sig-paren">(</span><em>rego</em>, <em>location</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.addCarLocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds location for car in car table</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.admin_getBookingHistory">
+<code class="descname">admin_getBookingHistory</code><span class="sig-paren">(</span><em>rego</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.admin_getBookingHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all bookings for a given car</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.bookCar">
+<code class="descname">bookCar</code><span class="sig-paren">(</span><em>user</em>, <em>rego</em>, <em>startDate</em>, <em>endDate</em>, <em>eventID</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.bookCar" title="Permalink to this definition">¶</a></dt>
+<dd><p>allows car to be booked and updates booking database given username, rego, start and enddates. also takes eventID to update calendar</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.checkoutBooking">
+<code class="descname">checkoutBooking</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>carRego</em>, <em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.checkoutBooking" title="Permalink to this definition">¶</a></dt>
+<dd><p>allows user to unlock and take car given username, password and car rego are correct
+and todays date is within their booking time frame</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.createBooking">
+<code class="descname">createBooking</code><span class="sig-paren">(</span><em>user</em>, <em>rego</em>, <em>startDate</em>, <em>EndDate</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.createBooking" title="Permalink to this definition">¶</a></dt>
+<dd><p>create new booking for a user within the Booking table given
+user, rego, start date and end date of booking.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.createDatabase">
+<code class="descname">createDatabase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.createDatabase" title="Permalink to this definition">¶</a></dt>
+<dd><p>function to create database in the event that it doed not exist</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.deleteBooking">
+<code class="descname">deleteBooking</code><span class="sig-paren">(</span><em>eventID</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.deleteBooking" title="Permalink to this definition">¶</a></dt>
+<dd><p>removes booking from database given ID</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.deleteCar">
+<code class="descname">deleteCar</code><span class="sig-paren">(</span><em>rego</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.deleteCar" title="Permalink to this definition">¶</a></dt>
+<dd><p>admin request to delete car</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.deleteUser">
+<code class="descname">deleteUser</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.deleteUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>admin request to delete user</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.fixFault">
+<code class="descname">fixFault</code><span class="sig-paren">(</span><em>rego</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.fixFault" title="Permalink to this definition">¶</a></dt>
+<dd><p>reset fault of car when repaired</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.getAllCars">
+<code class="descname">getAllCars</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.getAllCars" title="Permalink to this definition">¶</a></dt>
+<dd><p>return all cars</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.getAvailableCars">
+<code class="descname">getAvailableCars</code><span class="sig-paren">(</span><em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.getAvailableCars" title="Permalink to this definition">¶</a></dt>
+<dd><p>retursn all available cars given date</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.getBookingHistory">
+<code class="descname">getBookingHistory</code><span class="sig-paren">(</span><em>user</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.getBookingHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all bookings for a given user</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.getCarLocations">
+<code class="descname">getCarLocations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.getCarLocations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the locations of all the cars</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.getUserEmail">
+<code class="descname">getUserEmail</code><span class="sig-paren">(</span><em>user</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.getUserEmail" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns userEmail given username</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.getUserID">
+<code class="descname">getUserID</code><span class="sig-paren">(</span><em>user</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.getUserID" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns userID given username</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.getUsers">
+<code class="descname">getUsers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.getUsers" title="Permalink to this definition">¶</a></dt>
+<dd><p>return all users</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.insertUser">
+<code class="descname">insertUser</code><span class="sig-paren">(</span><em>name</em>, <em>email</em>, <em>password</em>, <em>userType</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.insertUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>insert new user into User table given name, email and password</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.populateDatabase">
+<code class="descname">populateDatabase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.populateDatabase" title="Permalink to this definition">¶</a></dt>
+<dd><p>populates Car table with company cars</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.removeBooking">
+<code class="descname">removeBooking</code><span class="sig-paren">(</span><em>bookingID</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.removeBooking" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes booking given a bookingID</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.reportFault">
+<code class="descname">reportFault</code><span class="sig-paren">(</span><em>rego</em>, <em>fault</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.reportFault" title="Permalink to this definition">¶</a></dt>
+<dd><p>report fault of given car rego</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.returnCar">
+<code class="descname">returnCar</code><span class="sig-paren">(</span><em>carRego</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.returnCar" title="Permalink to this definition">¶</a></dt>
+<dd><p>given a car registration, it updates the Car table whether a car has been returned</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.searchCars">
+<code class="descname">searchCars</code><span class="sig-paren">(</span><em>attribute</em>, <em>term</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.searchCars" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all cars given string attribute (fixed from call) and term</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.searchUsers">
+<code class="descname">searchUsers</code><span class="sig-paren">(</span><em>attribute</em>, <em>term</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.searchUsers" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all cars given string attribute (fixed from call) and term</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.updateCar">
+<code class="descname">updateCar</code><span class="sig-paren">(</span><em>rego</em>, <em>attribute</em>, <em>newData</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.updateCar" title="Permalink to this definition">¶</a></dt>
+<dd><p>admin request to update data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="databaseaccess.DatabaseUtils.updateUser">
+<code class="descname">updateUser</code><span class="sig-paren">(</span><em>name</em>, <em>attribute</em>, <em>newData</em><span class="sig-paren">)</span><a class="headerlink" href="#databaseaccess.DatabaseUtils.updateUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>admin request to update data</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MasterPi</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Connor Hutchinson, Kobe Friswell, Uigue Lee, Louis Abasta.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/DatabaseAccess.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
